@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:scrollbars="vertical">
+
+    <LinearLayout
+        android:background="@color/colorPrimaryWhite"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/textViewLibelleFrais"
+            android:layout_width="385dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:padding="20dp"
+            android:text="@string/titreFormFrais"
+            android:textAlignment="center"
+            android:textSize="10pt">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/editTextLibelleFrais"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="@string/libelleFrais"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textColor="#707070"
+            android:textSize="20sp"
+            android:textStyle="italic">
+
+        </EditText>
+        <EditText
+            android:id="@+id/editTextMontantFrais"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="@string/montantFrais"
+            android:inputType="numberDecimal"
+            android:textAlignment="center"
+            android:textColor="#707070"
+            android:textSize="20sp"
+            android:textStyle="italic">
+
+        </EditText>
+        <EditText
+            android:id="@+id/editTextDateFrais"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="@string/dateFrais"
+            android:inputType="datetime"
+            android:textAlignment="center"
+            android:textColor="#707070"
+            android:textSize="20sp"
+            android:textStyle="italic">
+
+        </EditText>
+
+        <!--Put form controls here-->
+
+    </LinearLayout>
+</ScrollView>
