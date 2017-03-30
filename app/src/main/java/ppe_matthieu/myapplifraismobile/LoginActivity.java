@@ -1,41 +1,25 @@
 package ppe_matthieu.myapplifraismobile;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.annotation.TargetApi;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.app.ProgressDialog;
-import android.content.CursorLoader;
 import android.content.Loader;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.inputmethod.EditorInfo;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
 
-import org.apache.http.NameValuePair;
+import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
-import static android.Manifest.permission.READ_CONTACTS;
+import static android.R.id.message;
 
 /**
  * A login screen that offers login via email/password.
@@ -66,7 +50,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         Button btnConnexion = (Button) findViewById(R.id.connect_button);
-        btnConnexion.setOnClickListener(this);
+        btnConnexion.setOnClickListener((OnClickListener) this);
 
     }
 
@@ -75,8 +59,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         int id = button.getId();
         switch (id){
             case R.id.connect_button :
-                EditText username_txt = {EditText}.findViewById(R.id.username_txt);
-                EditText password_txt = {EditText}.findViewById(R.id.password_txt);
+                final EditText username_txt = (EditText) findViewById(R.id.username_txt);
+                final EditText password_txt = (EditText) findViewById(R.id.password_txt);
 
                 String username = username_txt.getText().toString();
                 String password = password_txt.getText().toString();
@@ -84,6 +68,21 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 new connect().execute(username, password);
 
         }
+    }
+
+    @Override
+    public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+        return null;
+    }
+
+    @Override
+    public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
+
+    }
+
+    @Override
+    public void onLoaderReset(Loader<Cursor> loader) {
+
     }
 
 
@@ -124,8 +123,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             try {
                 // Checking for SUCCESS TAG
-                success = json.getBoolean(TAG_SUCCESS);
-                message = json.getString(TAG_MESSAGE);
+                boolean success = json.getBoolean(TAG_SUCCESS);
+                String message = json.getString(TAG_MESSAGE);
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -137,13 +136,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         /**
          * After completing background task Dismiss the progress dialog
          * **/
-        protected void onPostExecute(String file_url) {
+        protected void onPostExecute(String file_url, final boolean success) {
             // dismiss the dialog after getting all products
             pDialog.dismiss();
             // updating UI from Background Thread
             runOnUiThread(new Runnable() {
                 public void run() {
-                    if (success == true){
+                    if (success){
                         Toast.makeText(null, "id = " + message, Toast.LENGTH_SHORT).show();
                     }else{
                         Toast.makeText(null, "Erreur: " + message, Toast.LENGTH_SHORT).show();
@@ -157,26 +156,33 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     /*Fin ajout de code*/
     ////////////////////////////////////////////////////////////////////
 
+/*
 
 
 
 
-    /**
+    */
+/**
      * Id to identity READ_CONTACTS permission request.
-     */
+     *//*
+
     private static final int REQUEST_READ_CONTACTS = 0;
 
-    /**
+    */
+/**
      * A dummy authentication store containing known user names and passwords.
      * TODO: remove after connecting to a real authentication system.
-     */
+     *//*
+
     private static final String[] DUMMY_CREDENTIALS = new String[]{
 //            "foo@example.com:hello", "bar@example.com:world",
             "admin@applifrais.fr","admin"
     };
-    /**
+    */
+/**
      * Keep track of the login task to ensure we can cancel it if requested.
-     */
+     *//*
+
     private UserLoginTask mAuthTask = null;
 
     // UI references.
@@ -251,9 +257,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         return false;
     }
 
-    /**
+    */
+/**
      * Callback received when a permissions request has been completed.
-     */
+     *//*
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
@@ -265,11 +273,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     }
 
 
-    /**
+    */
+/**
      * Attempts to sign in or register the account specified by the login form.
      * If there are form errors (invalid email, missing fields, etc.), the
      * errors are presented and no actual login attempt is made.
-     */
+     *//*
+
     private void attemptLogin() {
         if (mAuthTask != null) {
             return;
@@ -327,9 +337,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         return password.length() > 4;
     }
 
-    /**
+    */
+/**
      * Shows the progress UI and hides the login form.
-     */
+     *//*
+
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgress(final boolean show) {
         // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
@@ -417,10 +429,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         int IS_PRIMARY = 1;
     }
 
-    /**
+    */
+/**
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
-     */
+     *//*
+
     public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 
         private final String mEmail;
@@ -473,5 +487,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(false);
         }
     }
+ */
 }
+
 

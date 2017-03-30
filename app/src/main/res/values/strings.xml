@@ -18,4 +18,6 @@
     <string name="montantFrais">montant</string>
     <string name="titreFormFrais">Formulaire d\'ajout</string>
     <string name="dateFrais">date</string>
+    <string name="txtButtonAjouter">Ajouter</string>
+    <string name="logoGSB">Bienvenue sur GSB Applifrais</string>
 </resources>

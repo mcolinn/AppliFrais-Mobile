@@ -16,7 +16,8 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="171dp"
-        app:srcCompat="@drawable/img_logo_web" />
+        app:srcCompat="@drawable/img_logo_web"
+        android:contentDescription="@string/logoGSB" />
 
     <ProgressBar
         android:id="@+id/login_progress"

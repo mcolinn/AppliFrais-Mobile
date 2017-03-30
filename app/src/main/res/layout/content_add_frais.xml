@@ -49,21 +49,13 @@
             android:textColor="#707070"
             android:textSize="20sp"
             android:textStyle="italic">
-
         </EditText>
-        <EditText
-            android:id="@+id/editTextDateFrais"
+
+        <Button
+            android:id="@+id/buttonAjouter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:hint="@string/dateFrais"
-            android:inputType="datetime"
-            android:textAlignment="center"
-            android:textColor="#707070"
-            android:textSize="20sp"
-            android:textStyle="italic">
-
-        </EditText>
+            android:text="@string/txtButtonAjouter" />
 
         <!--Put form controls here-->
 
