@@ -2,11 +2,9 @@ package ppe_matthieu.myapplifraismobile.db;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import java.util.ArrayList;
-import java.util.List;
+import ppe_matthieu.myapplifraismobile.entity.FraisForfait;
 
 /**
  * Created by Matthieu_2 on 20/03/2017.

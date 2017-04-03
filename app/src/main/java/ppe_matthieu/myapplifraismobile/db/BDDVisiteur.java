@@ -4,6 +4,8 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
+import ppe_matthieu.myapplifraismobile.entity.Visiteur;
+
 /**
  * Created by Matthieu_2 on 20/03/2017.
  */

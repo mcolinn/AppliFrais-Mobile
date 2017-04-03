@@ -1,6 +1,7 @@
 package ppe_matthieu.myapplifraismobile;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -43,8 +44,6 @@ public class AddFraisActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener()
             final Button button = (Button) findViewById(R.id.buttonAjouter);
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -59,6 +58,8 @@ public class AddFraisActivity extends AppCompatActivity {
                     //ajout du frais à la BDD
                     new ajoutFrais().execute(libelle, montant);
 
+                    Intent intentHome = new Intent(AddFraisActivity.this, MainActivity.class);
+                    startActivity(intentHome);
                 }
             });
     }

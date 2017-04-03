@@ -20,4 +20,5 @@
     <string name="dateFrais">date</string>
     <string name="txtButtonAjouter">Ajouter</string>
     <string name="logoGSB">Bienvenue sur GSB Applifrais</string>
+    <string name="title_activity_main">Accueil</string>
 </resources>
