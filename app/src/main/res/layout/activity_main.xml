@@ -23,18 +23,19 @@
     <include layout="@layout/content_main"
         android:id="@+id/include" />
 
-    <android.support.design.widget.FloatingActionButton
+    <!--<android.support.design.widget.FloatingActionButton
         android:id="@+id/addFraisButton"
-        android:layout_width="87dp"
-        android:layout_height="87dp"
-        android:layout_gravity="right"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
         android:clickable="true"
         app:backgroundTint="@color/colorPrimary"
         app:elevation="0dp"
         app:fabSize="mini"
         app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="top|right"
+        app:layout_anchorGravity="top"
         app:srcCompat="@drawable/add_item_icon"
-        tools:ignore="RtlHardcoded" />
+        tools:ignore="RtlHardcoded" />-->
+
 
 </android.support.design.widget.CoordinatorLayout>

@@ -133,8 +133,6 @@ public class LoginActivity extends AppCompatActivity{
                         Intent listeFiches = new Intent(getApplicationContext(), MainActivity.class);
                         listeFiches.putExtra("id", message);
                         startActivity(listeFiches);
-
-
                     }else{
                         Toast.makeText(getApplicationContext(), "Erreur: " + message, Toast.LENGTH_SHORT).show();
                     }
