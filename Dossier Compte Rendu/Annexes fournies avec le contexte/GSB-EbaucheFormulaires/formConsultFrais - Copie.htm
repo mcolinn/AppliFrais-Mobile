@@ -1,0 +1,98 @@
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Suivi des frais de visite</title>
+	<link rel="stylesheet" href="style.css" />
+	<!--bootsrap-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+</head>
+<body>
+	<header>
+		<div class="row" name="menu"> 	<!--menu général, haut de page-->
+			<div class="col-sm-4" name="logo">
+				<img src="logo.jpg" width="100" height="60"/>
+			</div>
+			<div class="col-sm-8">
+				<h2>Outils</h2>
+				<ul><li>Frais</li>
+					<ul>
+						<li><a href="formSaisieFrais.htm" >Nouveau</a></li>
+						<li><a href="formConsultFrais.htm">Consulter</a></li>
+					</ul>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<div class="container-fluid"> <!-- bloc Suivi des frais-->
+		<div class="row" id="titre">
+			<div class="col-md-12">
+				<h1>Suivi de remboursement des Frais</h1>
+			</div>
+		</div>
+			<!-- formulaire d'affichage des frais-->
+			<form name="formConsultFrais" method="post" action="chercheFrais.php">
+				<!-- bloc période-->
+				<div class="row" id="blocPeriode">
+					<div class="col-md-4" align="right">
+						<h1> Période </h1>
+						<label class="titre">Mois/Année :</label>
+						<input class="zone" type="text" name="dateConsult" size="12" />
+					</div>
+				</div>
+				<!-- bloc frais-->
+				<div class="row" id="blocFrais">
+					<!-- colonne forfaits-->
+					<div class="col-md-5"id="blocForfait">
+						<h2>Frais au forfait </h2>
+
+						<table>
+							<tr>
+								<th>Repas midi</th>
+								<th>Nuitée </th>
+								<th>Etape</th>
+								<th>Km </th>
+								<th>Situation</th>
+								<th>Date opération</th>
+								<th>Remboursement</th>
+							</tr>
+							<tr align="center">
+								<td width="80"> <label size="3" name="repas"/></td>
+								<td width="80"> <label size="3" name="nuitee"/></td>
+								<td width="80"> <label size="3" name="etape"/></td>
+								<td width="80"> <label size="3" name="km" /></td>
+								<td width="80"> <label size="3" name="situation" /></td>
+								<td width="80"> <label size="3" name="dateOper" /></td>
+								<td width="80"> <label size="3" name="dateOper" /></td>
+							</tr>
+						</table>
+					</div>
+					<!-- colonne hors forfaits-->
+					<div class="col-md-5" id="blocHorsForfait">
+						<h2>Hors Forfait</h2>
+						<table>
+							<tr>
+								<th>Date</th>
+								<th>Libellé </th>
+								<th>Montant</th>
+								<th>Situation</th>
+								<th>Date opération</th>
+							</tr>
+							<tr align="center">
+								<td width="100" ><label size="12" name="hfDate1"/></td>
+								<td width="220"><label size="30" name="hfLib1"/></td>
+								<td width="90" ><label size="10" name="hfMont1"/></td>
+								<td width="80"> <label size="3" name="hfSitu1" /></td>
+								<td width="80"> <label size="3" name="hfDateOper1" /></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="titre">Nb Justificatifs</div>
+				<input type="text" class="zone" size="4" name="hcMontant"/>
+			</form>
+	</div>
+
+</body>
+</html>
